@@ -1,0 +1,216 @@
+﻿@page
+@model WebApplication2.Pages.GroupVisitorModel
+@{
+}
+<body>
+    <form method="post">
+        <div class="grandparent">
+            <div id="top-left" class="parent">
+                <div class="header">
+                    <p>Информация для пропуска</p>
+                </div>
+                <div class="content">
+                    <p>Срок действия заявки:</p>
+                    <p>
+                        c*
+                        <input name="date_start" type="date" />
+                        по
+                        <input name="date_end" type="date" />
+                    </p>
+                    <p>
+                        Цель посещения:
+                        <input name="Purpose" type="text" />
+                    </p>
+                </div>
+            </div>
+            <div id="top-right" class="parent">
+                <div class="header">
+                    <p>Принимающая строна</p>
+                </div>
+                <div>
+                    <p>
+                        Подразделение*:<br />
+                        <select name="Subdivision">
+                        </select>
+                    </p>
+                    <p>
+                        ФИО:<br />
+                        <input name="FIO" type="text" />
+                        <img src="/Image/нАДо2.png" width="30px" height="25px" />
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="grandparent">
+            <div class="parent">
+                <div id="header_center" class="header">
+                    <p>Информация о посетителе</p>
+                </div>
+                <div class="center">
+                    <div id="center_left" class="content">
+                        <p>Фамилия: <input name="surname" type="text" /></p>
+                        <p>Имя: <input name="name" type="text" /></p>
+                        <p>Отчество*: <input name="patronymic" type="text" /></p>
+                        <p>Телефон: <input name="phone" type="text" /></p>
+                        <p>E-mail: <input name="mail" type="text" /></p>
+
+                    </div>
+                    <div id="center_right" class="content">
+                        <p>Организация: <input name="Company" type="text" /></p>
+                        <p>Примечание: <input name="note" type="text" /></p>
+                        <p>Дата рождения: <input name="DataOfBirth" type="date" /></p>
+                        <p>Серия: <input name="PasportsSeria" type="text" /></p>
+                        <p>Номер: <input name="PasportsNum" type="text" /></p>
+                    </div>
+                    <div id="photo">
+                        <img src="/Image/нАДо2.png" width="100px" height="100px" /><br />
+                        <br />
+                        <button>Загрузить фото</button>
+
+                    </div>
+                </div>
+            </div>
+            <div id="center_parent" class="parent">
+                <div id="header_center" class="header">
+                    <p>Информация о посетителе</p>
+                </div>
+                <div id="group_button" class="group_button">
+                    <button><img src="~/Image/556687f98a3c59a7a18e0126d5da4549.png" width="20px" height="20px" />Загрузить</button>
+                    <button><img src="~/Image/556687f98a3c59a7a18e0126d5da4549.png" width="20px" height="20px" />Загрузить</button>
+                </div>
+                <div id="table"> 
+                    <table id="table" class="table">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Имя</th>
+                            <th scope="col">Фамилия</th>
+                            <th scope="col">Обращение</th>
+                            <th scope="col">Фото</th>
+                        </tr>
+                        <tbody>
+                            <tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+                </div>
+                
+            </div>
+
+        </div>
+        <div class="grandparent">
+            <div id="left-bottom" class="parent">
+                <div class="header">
+                    <p>Прикрепляемые документы</p>
+                </div>
+                <div class="content">
+                    <input type="file" />
+                </div>
+            </div>
+            <div id="right-bottom" class="parent">
+                <div class="content">
+                    <button>Очистить форму</button>
+                    <input type="submit" value="Оформить заявку" />
+                </div>
+            </div>
+        </div>
+
+    </form>
+    
+</body>
+
+<style>
+    .grandparent {
+        display: flex;
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+    .parent {
+        background-color: lightgray;
+        border-radius: 10px;
+        text-align: center;
+    }
+
+    .header {
+        background-color: orange;
+        border-radius: 10px;
+    }
+
+    #top-left {
+        width: 55%;
+        margin: 0px 30px 0px 0px;
+    }
+
+    #top-right {
+        width: 70%;
+        margin: 0px 0px 0px 30px;
+    }
+
+    .center_grandparent {
+        display: flex;
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+    .center {
+        display: flex;
+        text-align: right;
+    }
+
+    #center_left {
+        width: 30%;
+    }
+
+    #center_right {
+        width: 35%;
+    }
+
+    #photo {
+        width: 35%;
+        padding: 10px;
+        margin: 0 20px 0 0;
+        text-align: center;
+    }
+
+    #left-bottom {
+        margin: 0 20px 0 0;
+        width: 65%;
+        height: 35%;
+        text-align: center;
+    }
+
+    #right-bottom {
+        background-color: white;
+        width: 55%;
+        height: 35%;
+        text-align: center;
+    }
+
+    #center_parent {
+        width:40%;
+        margin:0 0 0 10px;
+    }
+    #table{
+        text-align:center;
+    }
+    </style>

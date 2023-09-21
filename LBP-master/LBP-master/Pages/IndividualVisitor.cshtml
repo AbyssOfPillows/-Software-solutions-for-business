@@ -1,0 +1,160 @@
+﻿@page
+@model WebApplication2.Pages.IndividualVisitorModel
+@{
+    ViewData["Title"] = "IndividualVisitor";
+}
+<body>
+    <form method="post">
+        <div class="grandparent">
+            <div id="top-left" class="parent">
+                <div class="header">
+                    <p>Информация для пропуска</p>
+                </div>
+                <div class="content">
+                    <p>Срок действия заявки:</p>
+                        <p>
+                            c*
+                            <input name="date_start" type="date" />
+                            по
+                            <input name="date_end" type="date" />
+                        </p>
+                        <p>
+                            Цель посещения:
+                            <input name="Purpose" type="text" />
+                        </p>
+                </div>
+            </div>
+            <div id="top-right" class="parent">
+                <div class="header">
+                    <p>Принимающая строна</p>
+                </div>
+                <div>
+                        <p>
+                            Подразделение*:<br />
+                            <select name="Subdivision">
+                            </select>
+                        </p>
+                        <p>
+                            ФИО:<br />
+                            <input name="FIO" type="text" />
+                            <img src="/Image/нАДо2.png" width="30px" height="25px" />
+                        </p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="center_grandparent">
+            <div class="parent">
+                <div class="header">
+                    <p>Информация о посетителе</p>
+                </div>
+                <div class="center">
+                    <div id="center_left">
+                            <p>Фамилия: <input name="surname" type="text" /></p>
+                            <p>Имя: <input name="name" type="text" /></p>
+                            <p>Отчество*: <input name="patronymic" type="text" /></p>
+                            <p>Телефон: <input name="phone" type="text" /></p>
+                            <p>E-mail: <input name="mail" type="text" /></p>
+
+                    </div>
+                    <div id="center_right">
+
+                            <p>Организация: <input name="Company" type="text" /></p>
+                            <p>Примечание: <input name="note" type="text" /></p>
+                            <p>Дата рождения: <input name="DataOfBirth" type="date" /></p>
+                            <p>Серия: <input name="PasportsSeria" type="text" /></p>
+                            <p>Номер: <input name="PasportsNum" type="text" /></p>
+                    </div>
+                    <div id="photo">
+                            <img src="/Image/нАДо2.png" width="100px" height="100px" /><br />
+                            <br />
+                            <button>Загрузить фото</button>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="grandparent">
+            <div id="left-bottom" class="parent">
+                <div class="header">
+                    <p>Прикрепляемые документы</p>
+                </div>
+                <div class="content">
+                        <input type="file" />
+                </div>
+            </div>
+            <div id="right-bottom" class="parent">
+                <div class="content">
+                        <button>Очистить форму</button>
+                        <input type="submit" value="Оформить заявку" />
+                </div>
+            </div>
+        </div>
+
+    </form>
+    
+</body>
+
+<style>
+    .grandparent{
+        display: flex;
+        width: 90%;
+    }
+
+    .parent {
+        background-color: lightgray;
+        border-radius: 10px;
+        text-align:center;
+        margin: 0 10px 20px 10px;
+    }
+
+    .header{
+        background-color: orange;
+        border-radius: 10px;
+    }
+    #top-left{
+        width: 55%;
+    }
+
+    #top-right {
+        width: 70%;
+    }
+
+    .center_grandparent {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+    .center{
+        display: flex;
+        text-align: right;
+        width:100%;
+    }
+
+    #center_left{
+        width :30%;
+    }
+
+    #center_right {
+        width: 35%;
+    }
+    #photo{
+        width: 35%;
+        padding: 10px;
+        margin: 0 20px 0 0;
+        text-align:center;
+    }
+    #left-bottom{
+        margin: 0 20px 0 0;
+        width: 45%;
+        height: 35%;
+        text-align: center;
+    }
+    #right-bottom{
+        background-color: white;
+        width: 55%;
+        height: 35%;
+        text-align:center;
+    }
+    </style>
