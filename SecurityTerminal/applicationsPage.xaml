@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SecurityTerminal.applicationsPage"
+             Title="applicationsPage">
+    <ScrollView>
+        <VerticalStackLayout x:Name="MainStack">
+            <Label Text="Поиск" VerticalTextAlignment="Center" HorizontalTextAlignment="Center">
+
+            </Label>
+            <StackLayout>
+                <Label Text="ФИО" VerticalTextAlignment="Center" HorizontalTextAlignment="Start">
+
+                </Label>
+                <Entry x:Name="FIO">
+
+                </Entry>
+                <Label Text="Номер паспорта" VerticalTextAlignment="Center" HorizontalTextAlignment="Start">
+
+                </Label>
+                <Entry x:Name="NumPassport">
+
+                </Entry>
+                <Button
+                Clicked="SearchBtn">
+                </Button>
+            </StackLayout>
+            <Label Text="Фильтрация" VerticalTextAlignment="Center" HorizontalTextAlignment="Center">
+
+            </Label>
+            <Picker x:Name="TypePicker" Title = "Тип">
+                <Picker.Items>
+                    <x:String>Individual</x:String>
+                    <x:String>Group</x:String>
+                </Picker.Items>
+            </Picker>
+            <Picker x:Name="DepartamentPicker" Title = "Подразделения">
+                <Picker.Items>
+                    <x:String>Производство</x:String>
+                    <x:String>Сбыт</x:String>
+                    <x:String>Администрация</x:String>
+                    <x:String>Служба безопасности</x:String>
+                    <x:String>Планирование</x:String>
+                    <x:String>Общий отдел</x:String>
+                    <x:String>Охрана</x:String>
+                </Picker.Items>
+            </Picker>
+            <Label Text="Дата" VerticalTextAlignment="Center" HorizontalTextAlignment="Center">
+
+            </Label>
+            <Entry x:Name="DateEntry">
+
+            </Entry>
+            <Button
+                Clicked="ConfirmBtn">
+            </Button>
+            <StackLayout>
+                <ListView x:Name="applicationListView"></ListView>
+            </StackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

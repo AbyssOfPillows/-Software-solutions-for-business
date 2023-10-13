@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TerminalGeneralEmployee.applicationsPage"
+             Title="applicationsPage">
+    <ScrollView>
+        <VerticalStackLayout x:Name="MainStack">
+            <StackLayout>
+
+            </StackLayout>
+            <Picker x:Name="TypePicker" Title = "Тип">
+                <Picker.Items>
+                    <x:String>Individual</x:String>
+                    <x:String>Group</x:String>
+                </Picker.Items>
+            </Picker>
+            <Picker x:Name="DepartamentPicker" Title = "Подразделения">
+                <Picker.Items>
+                    <x:String>Производство</x:String>
+                    <x:String>Сбыт</x:String>
+                    <x:String>Администрация</x:String>
+                    <x:String>Служба безопасности</x:String>
+                    <x:String>Планирование</x:String>
+                    <x:String>Общий отдел</x:String>
+                    <x:String>Охрана</x:String>
+                </Picker.Items>
+            </Picker>
+            <Picker x:Name="StatusPicker" Title = "Статус">
+                <Picker.Items>
+                    <x:String>1</x:String>
+                    <x:String>0</x:String>
+                    <x:String></x:String>
+                </Picker.Items>
+            </Picker>
+            <Button
+                Clicked="ConfirmBtn">
+            </Button>
+            <StackLayout>
+                <ListView x:Name="applicationListView"></ListView>
+            </StackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
