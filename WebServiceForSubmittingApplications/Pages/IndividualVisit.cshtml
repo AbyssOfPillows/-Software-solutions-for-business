@@ -1,0 +1,250 @@
+﻿@page
+@model WebApplications.Pages.IndividualVisitModel
+@{
+    
+}
+<body>
+    <form id="myForm" method="post">
+        <p id="header"><bold>Форма записи на посещение мероприятия</bold></p>
+        <div class="grandparent">
+            <div id="top-left" class="parent">
+                <div class="header">
+                    <p>Информация для пропуска</p>
+                </div>
+                <div class="content">
+                    <p>Срок действия заявки:</p>
+                    <p>
+                        c*
+                        <input name="date_start" type="date" />
+                        по
+                        <input name="date_end" type="date" />
+                    </p>
+                    <p>
+                        Цель посещения:<br />
+                        <input id="select" name="Purpose" type="text" />
+                    </p>
+                </div>
+            </div>
+            <div id="top-right" class="parent">
+                <div class="header">
+                    <p>Принимающая строна</p>
+                </div>
+                <div>
+                    <p>
+                        Подразделение*:<br />
+                        <select name="Subdivision">
+                            <option value="Производство">Производство</option>
+                            <option value="Сбыт">Сбыт</option>
+                            <option value="Администрация">Администрация</option>
+                            <option value="Служба безопасности">Служба безопасности</option>
+                            <option value="Планирование">Планирование</option>
+                            <option value="Общий отдел">Общий отдел</option>
+                            <option value="Охрана">Охрана</option>
+                        </select>
+                    </p>
+                    <p>
+                        ФИО*:
+                        <div id="imgtext">
+                            <input id="selectTwo" name="FIO" type="text" />
+                            <img id="img" src="/Image/нАДо2.png" />
+                        </div>
+                        
+                    </p>
+                </div>
+
+            </div>
+        </div>
+        <div class="center_grandparent">
+            <div class="parent">
+                <div class="header">
+                    <p>Информация о посетителе</p>
+                </div>
+                <div class="center">
+                    <div id="center_left">
+                        <p>Фамилия*: <input name="surname" type="text" /></p>
+                        <p>Имя*: <input name="name" type="text" /></p>
+                        <p>Отчество*: <input name="patronymic" type="text" /></p>
+                        <p>Телефон: <input placeholder="+7 (###) ###-##-##" name="phone" type="text" /></p>
+                        <p>E-mail: <input name="mail" type="text" /></p>
+
+                    </div>
+                    <div id="center_right">
+
+                        <p>Организация: <input name="Company" type="text" /></p>
+                        <p>Примечание: <input name="note" type="text" /></p>
+                        <p>Дата рождения: <input name="DataOfBirth" type="date" /></p>
+                        <p>Серия: <input name="PasportsSeria" type="text" /></p>
+                        <p>Номер: <input name="PasportsNum" type="text" /></p>
+                    </div>
+                    <div id="photo">
+                        <img id="imgphoto" class="img" src="/Image/нАДо2.png" /><br />
+                        <br />
+                        <input id="visiorPhoto" type="file" value="Загрузить фото" name="visiorPhoto" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="grandparent">
+            <div id="left-bottom" class="parent">
+                <div class="header">
+                    <p>Прикрепляемые документы</p>
+                </div>
+                <div id="filediv" class="content">
+                    <label for="fileBtn">
+                        <img src="/Image/free_icon.png" width="40" height="25" alt="Выбрать файл">Прикрепить файл
+                    </label>
+                    <input id="fileBtn" type="file" name="PassportScan" style="display: none" />
+                </div>
+            </div>
+            <div id="right-bottom" class="parent">
+                <div class="content">
+                    <button onclick="clearForm">Очистить форму</button>
+                    <input type="submit" value="Оформить заявку" />
+                </div>
+            </div>
+        </div>
+    </form>
+    <script>
+        function clearForm() {
+            document.getElementById("myForm").reset();
+        }
+    </script>
+</body>
+
+
+
+<style>
+    .grandparent {
+        display: flex;
+        width: 90%;
+        border-radius: 10px;
+    }
+
+    .parent {
+        background-color: lightgray;
+        border-radius: 10px;
+        text-align: center;
+        margin: 0 10px 20px 10px;
+    }
+
+    .header {
+        background-color: orange;
+        border-radius: 10px;
+    }
+
+    #top-left {
+        width: 55%;
+    }
+
+    #top-right {
+        width: 70%;
+    }
+
+    .center_grandparent {
+        width: 90%;
+        margin-bottom: 20px;
+        border-radius: 10px;
+    }
+
+    .center {
+        display: flex;
+        text-align: right;
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    #center_left {
+        width: 30%;
+    }
+
+    #center_right {
+        width: 35%;
+    }
+
+    #photo {
+        width: 35%;
+        padding: 10px;
+        margin: 0 20px 0 0;
+        text-align: center;
+        border-radius: 10px;
+    }
+
+    #left-bottom {
+        width: 65%;
+        border-radius: 10px;
+    }
+
+    #right-bottom {
+        background-color: white;
+        width: 55%;
+        height: 35%;
+        text-align: center;
+        border-radius: 10px;
+    }
+
+    #img {
+        width: 30px;
+        height: 30px;
+        border-radius: 10px;
+    }
+
+    #id {
+        width: 10px;
+        height: 10px;
+        border-radius: 10px;
+    }
+
+    #imgphoto {
+        width: 90px;
+        height: 90px;
+        border-radius: 10px;
+    }
+    #header{
+        text-align:center;
+        width: 100%;
+        font-size:large;
+        border-radius: 10px;
+    }
+    select{
+        border-radius: 10px;
+        width: 95%;
+        margin: 0 0 0 10px;
+        display: flex;
+    }
+
+    #select {
+        border-radius: 10px;
+        width: 95%;
+        margin: 0 0 0 10px;
+        display: flex;
+    }
+
+    #docBtn{
+        border-radius: 10px;
+        margin: 0 0 10px 10px;
+    }
+
+    #fileBtn{
+        border-radius: 10px;
+        background-color: lightgray;
+    }
+    input{
+        border-radius: 10px;
+        border-width: 1px; 
+    }
+    button{
+        border-radius: 10px;
+    }
+
+    #selectTwo{
+        width:85%;
+        margin: 0 10px 0 10px;
+    }
+    #filediv{
+        display: flex;
+        margin: 0 0 10px 20px;
+    }
+    #imgtext{
+        display: flex;
+    }
+    </style>

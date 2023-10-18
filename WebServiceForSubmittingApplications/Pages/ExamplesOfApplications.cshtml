@@ -1,0 +1,14 @@
+﻿@page
+@model WebApplications.Pages.ExamplesOfApplicationsModel
+@{
+}
+<div>
+    <h2>Примеры заявок:</h2>
+    <table class="table">
+        <tr><th>Тип заявки</th><th>Подразделение для доступа</th><th>Дата</th><th>Статус:</th><th>Причина</th></tr>
+        @foreach(var user in Model.list)
+        {
+            <tr><td>@user.Type</td><td>@user.Departament</td><td>@user.Date</td><td>@user.Status</td><td>@user.Reason</td></tr>
+        }
+    </table>
+</div>
