@@ -1,0 +1,20 @@
+﻿@page
+@model OrderAPassWeb.Pages.PostIndividualApplicationWindowModel
+@{
+    
+}
+
+<div class="row justify-content-center align-items-center" style="height: 80vh">
+    <div class="col">
+        <a class="btn btn-secondary rounded-2" href="/IndividualWindow?password=@Model.password&email=@Model.email">
+            <img class="img-fluid" src="assets/User.jpg"/><br />
+            Личное посещение
+        </a>
+    </div>
+    <div class="col">
+        <a class="btn btn-secondary rounded-2" href="/GroupsWindow?password=@Model.password&email=@Model.email">
+            <img class="img-fluid" src="assets/Users.png" /><br />
+            Групповое посещение
+        </a>
+    </div>
+</div>

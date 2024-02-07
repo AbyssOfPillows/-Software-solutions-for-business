@@ -1,0 +1,77 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:UserIBTerminal.ViewModels"
+		xmlns:models="using:UserIBTerminal.Models"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+		x:DataType="vm:ManageSecurityTerminalViewModel"
+        x:Class="UserIBTerminal.Views.ManageSecurityTerminal"
+        Title="Стражник - Управдение безопасностью">
+	<TabControl>
+
+		<TabItem Header="Верификация" Margin="10" BorderThickness="1" >
+			<Grid>
+				<Line Stroke="White" StrokeThickness="1" StartPoint="0,0" EndPoint="4000,0" ></Line>
+				<DataGrid ItemsSource="{Binding Users}" >
+					<DataGrid.Columns>
+						<DataGridTextColumn Header="Surname" Binding="{Binding Surname}"></DataGridTextColumn>
+						<DataGridTextColumn Header="Name" Binding="{Binding Name}"></DataGridTextColumn>
+						<DataGridTextColumn Header="Patryonomic" Binding="{Binding Patryonomic}"></DataGridTextColumn>
+						<DataGridTextColumn Header="Post" Binding="{Binding Post.Name}"></DataGridTextColumn>	
+						<DataGridTemplateColumn Header="Type">
+							<DataGridTemplateColumn.CellTemplate>
+								<DataTemplate DataType="models:User">
+									<ComboBox Grid.Column="1" 
+											  ItemsSource="{Binding UserTypes}"
+											  HorizontalAlignment="Stretch" x:Name="ComboType"
+											  SelectedItem="{Binding Type}">
+										<ComboBox.ItemTemplate>
+											<DataTemplate>
+												<TextBlock Text="{Binding Name}"/>
+											</DataTemplate>
+										</ComboBox.ItemTemplate>
+									</ComboBox>
+								</DataTemplate>
+							</DataGridTemplateColumn.CellTemplate>
+						</DataGridTemplateColumn>
+						<DataGridTemplateColumn Header="Login" >
+							<DataGridTemplateColumn.CellTemplate>
+								<DataTemplate DataType="models:User">
+									<TextBox Text="{Binding Login}"/>
+								</DataTemplate>
+							</DataGridTemplateColumn.CellTemplate>
+						</DataGridTemplateColumn>
+						<DataGridTemplateColumn Header="Password">
+							<DataGridTemplateColumn.CellTemplate>
+								<DataTemplate DataType="models:User">
+									<TextBox Text="{Binding Password}"/>
+								</DataTemplate>
+							</DataGridTemplateColumn.CellTemplate>
+						</DataGridTemplateColumn>
+						<DataGridTemplateColumn Header="SecretWord">
+							<DataGridTemplateColumn.CellTemplate>
+								<DataTemplate DataType="models:User">
+									<TextBox Text="{Binding SecretWord}"/>
+								</DataTemplate>
+							</DataGridTemplateColumn.CellTemplate>
+						</DataGridTemplateColumn>
+						<DataGridTemplateColumn Header="Одобрить:">
+							<DataGridTemplateColumn.CellTemplate>
+								<DataTemplate DataType="models:User">
+									<CheckBox IsChecked="{Binding True}"/>
+								</DataTemplate>
+							</DataGridTemplateColumn.CellTemplate>
+						</DataGridTemplateColumn>
+					</DataGrid.Columns>
+				</DataGrid>
+				<Button Command="{Binding Save_Button}" HorizontalAlignment="Center">Одобрить</Button>
+			</Grid>
+			
+		</TabItem>
+		<TabItem Header="Мандаты доступа" Padding="4">
+			<Line Stroke="White" StrokeThickness="1" StartPoint="0,0" EndPoint="4000,0" ></Line>
+		</TabItem>
+	</TabControl>
+	
+</Window>

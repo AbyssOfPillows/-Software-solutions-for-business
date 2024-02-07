@@ -1,0 +1,64 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:AdminTerminal.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="AdminTerminal.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="AdminTerminal">
+
+    <Design.DataContext>
+        <!-- This only sets the DataContext for the previewer in an IDE,
+             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+	<Window.Styles>
+		<Style Selector="Grid">
+			<Setter Property="Margin" Value="1"></Setter>
+
+		</Style>
+		<Style Selector="TextBlock">
+			<Setter Property="VerticalAlignment" Value="Center"></Setter>
+			<Setter Property="HorizontalAlignment" Value="Stretch"></Setter>
+		</Style>
+		<Style Selector="TextBox">
+			<Setter Property="VerticalAlignment" Value="Center"></Setter>
+			<Setter Property="Grid.Column" Value="1"></Setter>
+		</Style>
+	</Window.Styles>
+
+	<StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+		<Grid ColumnDefinitions="150, 200">
+			<TextBlock>Тип</TextBlock>
+			<ComboBox Grid.Column="1" Items="{Binding Types}"
+					  HorizontalAlignment="Stretch"
+					  SelectedItem="{Binding SelectedType}">
+				<ComboBox.ItemTemplate>
+					<DataTemplate>
+						<TextBlock Text="{Binding Name}" />
+					</DataTemplate>
+				</ComboBox.ItemTemplate>
+			</ComboBox>
+		</Grid>
+		<Grid ColumnDefinitions="150, 200">
+			<TextBlock>Логин</TextBlock>
+			<TextBox Text="{Binding Login}"></TextBox>
+		</Grid>
+		<Grid ColumnDefinitions="150, 200">
+			<TextBlock>Пароль</TextBlock>
+			<TextBox Text="{Binding Password}"></TextBox>
+		</Grid>
+		<Grid ColumnDefinitions="150, 200">
+			<TextBlock>Секретное слово</TextBlock>
+			<TextBox Text="{Binding secretWord}"></TextBox>
+		</Grid>
+		<Button HorizontalAlignment="Center" Margin="10" Command="{Binding Button_Auth}">
+			Войти
+		</Button>
+		<TextBlock x:Name="WarningText" IsVisible="False" Foreground="Red" HorizontalAlignment="Center">Не пущу</TextBlock>
+	</StackPanel>
+    
+
+</Window>
